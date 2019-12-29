@@ -1,0 +1,25 @@
+<ul
+  class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+  id="accordionSidebar"
+>
+  <ng-template [ngIf]="brand" [ngIfElse]="noBrand">
+    <a
+      class="sidebar-brand d-flex align-items-center justify-content-center"
+      routerLink="{{ brandUrl }}"
+    >
+      <ng-container [ngTemplateOutlet]="brand.templateRef"></ng-container>
+    </a>
+  </ng-template>
+  <ng-template #noBrand>
+    <div
+      class="sidebar-brand d-flex align-items-center justify-content-center"
+    ></div>
+  </ng-template>
+
+  <sb-sidebar-menu></sb-sidebar-menu>
+
+  <!-- Sidebar Toggler (Sidebar) -->
+  <div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+  </div>
+</ul>
